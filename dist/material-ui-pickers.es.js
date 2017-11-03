@@ -479,7 +479,11 @@ var CalendarHeader = function CalendarHeader(props) {
       React.createElement(
         IconButton,
         { onClick: selectPreviousMonth },
-        leftArrowIcon || 'keyboard_arrow_left'
+        leftArrowIcon ? React.createElement(
+          Icon,
+          { className: leftArrowIcon },
+          leftArrowIcon
+        ) : 'keyboard_arrow_left'
       ),
       React.createElement(
         'div',
@@ -489,7 +493,11 @@ var CalendarHeader = function CalendarHeader(props) {
       React.createElement(
         IconButton,
         { onClick: selectNextMonth },
-        rightArrowIcon || 'keyboard_arrow_right'
+        rightArrowIcon ? React.createElement(
+          Icon,
+          { className: rightArrowIcon },
+          rightArrowIcon
+        ) : 'keyboard_arrow_right'
       )
     ),
     React.createElement(
@@ -1972,19 +1980,23 @@ var DateTimePickerTabs = function DateTimePickerTabs(props) {
         className: classes.tabs,
         indicatorColor: indicatorColor
       },
-      React.createElement(Tab, { value: 'date', icon: React.createElement(
+      React.createElement(Tab, { value: 'date', icon: dateRangeIcon ? React.createElement(
+          Icon,
+          { className: dateRangeIcon },
+          dateRangeIcon
+        ) : React.createElement(
           Icon,
           null,
-          ' ',
-          dateRangeIcon || 'date_range',
-          ' '
+          'date_range'
         ) }),
-      React.createElement(Tab, { value: 'time', icon: React.createElement(
+      React.createElement(Tab, { value: 'time', icon: timeIcon ? React.createElement(
+          Icon,
+          { className: timeIcon },
+          timeIcon
+        ) : React.createElement(
           Icon,
           null,
-          ' ',
-          timeIcon || 'access_time',
-          ' '
+          'access_time'
         ) })
     )
   );

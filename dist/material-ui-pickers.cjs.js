@@ -486,7 +486,11 @@ var CalendarHeader = function CalendarHeader(props) {
       React__default.createElement(
         materialUi.IconButton,
         { onClick: selectPreviousMonth },
-        leftArrowIcon || 'keyboard_arrow_left'
+        leftArrowIcon ? React__default.createElement(
+          materialUi.Icon,
+          { className: leftArrowIcon },
+          leftArrowIcon
+        ) : 'keyboard_arrow_left'
       ),
       React__default.createElement(
         'div',
@@ -496,7 +500,11 @@ var CalendarHeader = function CalendarHeader(props) {
       React__default.createElement(
         materialUi.IconButton,
         { onClick: selectNextMonth },
-        rightArrowIcon || 'keyboard_arrow_right'
+        rightArrowIcon ? React__default.createElement(
+          materialUi.Icon,
+          { className: rightArrowIcon },
+          rightArrowIcon
+        ) : 'keyboard_arrow_right'
       )
     ),
     React__default.createElement(
@@ -1979,19 +1987,23 @@ var DateTimePickerTabs = function DateTimePickerTabs(props) {
         className: classes.tabs,
         indicatorColor: indicatorColor
       },
-      React__default.createElement(materialUi.Tab, { value: 'date', icon: React__default.createElement(
+      React__default.createElement(materialUi.Tab, { value: 'date', icon: dateRangeIcon ? React__default.createElement(
+          materialUi.Icon,
+          { className: dateRangeIcon },
+          dateRangeIcon
+        ) : React__default.createElement(
           materialUi.Icon,
           null,
-          ' ',
-          dateRangeIcon || 'date_range',
-          ' '
+          'date_range'
         ) }),
-      React__default.createElement(materialUi.Tab, { value: 'time', icon: React__default.createElement(
+      React__default.createElement(materialUi.Tab, { value: 'time', icon: timeIcon ? React__default.createElement(
+          materialUi.Icon,
+          { className: timeIcon },
+          timeIcon
+        ) : React__default.createElement(
           materialUi.Icon,
           null,
-          ' ',
-          timeIcon || 'access_time',
-          ' '
+          'access_time'
         ) })
     )
   );
