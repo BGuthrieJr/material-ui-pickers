@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import { withStyles, IconButton } from 'material-ui';
+import { withStyles, IconButton, Icon } from 'material-ui';
 
 export const CalendarHeader = (props) => {
   const {
@@ -19,7 +19,7 @@ export const CalendarHeader = (props) => {
     <div>
       <div className={classes.switchHeader}>
         <IconButton onClick={selectPreviousMonth}>
-          {leftArrowIcon || 'keyboard_arrow_left'}
+          {leftArrowIcon ? <Icon className={leftArrowIcon}>{leftArrowIcon}</Icon> : 'keyboard_arrow_left'}
         </IconButton>
 
         <div className={classes.monthName}>
@@ -27,7 +27,7 @@ export const CalendarHeader = (props) => {
         </div>
 
         <IconButton onClick={selectNextMonth}>
-          {rightArrowIcon || 'keyboard_arrow_right'}
+          {rightArrowIcon ? <Icon className={rightArrowIcon}>{rightArrowIcon}</Icon> : 'keyboard_arrow_right'}
         </IconButton>
       </div>
 
