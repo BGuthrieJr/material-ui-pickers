@@ -19,7 +19,7 @@ export const CalendarHeader = (props) => {
     <div>
       <div className={classes.switchHeader}>
         <IconButton onClick={selectPreviousMonth}>
-          {leftArrowIcon ? <Icon className={leftArrowIcon}>{leftArrowIcon}</Icon> : 'keyboard_arrow_left'}
+          {leftArrowIcon ? <Icon className={leftArrowIcon} /> : 'keyboard_arrow_left'}
         </IconButton>
 
         <div className={classes.monthName}>
@@ -27,7 +27,7 @@ export const CalendarHeader = (props) => {
         </div>
 
         <IconButton onClick={selectNextMonth}>
-          {rightArrowIcon ? <Icon className={rightArrowIcon}>{rightArrowIcon}</Icon> : 'keyboard_arrow_right'}
+          {rightArrowIcon ? <Icon className={rightArrowIcon} /> : 'keyboard_arrow_right'}
         </IconButton>
       </div>
 

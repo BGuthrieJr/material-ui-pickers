@@ -486,11 +486,7 @@ var CalendarHeader = function CalendarHeader(props) {
       React__default.createElement(
         materialUi.IconButton,
         { onClick: selectPreviousMonth },
-        leftArrowIcon ? React__default.createElement(
-          materialUi.Icon,
-          { className: leftArrowIcon },
-          leftArrowIcon
-        ) : 'keyboard_arrow_left'
+        leftArrowIcon ? React__default.createElement(materialUi.Icon, { className: leftArrowIcon }) : 'keyboard_arrow_left'
       ),
       React__default.createElement(
         'div',
@@ -500,11 +496,7 @@ var CalendarHeader = function CalendarHeader(props) {
       React__default.createElement(
         materialUi.IconButton,
         { onClick: selectNextMonth },
-        rightArrowIcon ? React__default.createElement(
-          materialUi.Icon,
-          { className: rightArrowIcon },
-          rightArrowIcon
-        ) : 'keyboard_arrow_right'
+        rightArrowIcon ? React__default.createElement(materialUi.Icon, { className: rightArrowIcon }) : 'keyboard_arrow_right'
       )
     ),
     React__default.createElement(
@@ -693,7 +685,7 @@ Calendar.defaultProps = {
 var styles$2 = function styles(theme) {
   return {
     calendar: {
-      marginTop: 10
+      marginTop: 5
     },
     hidden: {
       opacity: 0,
@@ -1987,20 +1979,12 @@ var DateTimePickerTabs = function DateTimePickerTabs(props) {
         className: classes.tabs,
         indicatorColor: indicatorColor
       },
-      React__default.createElement(materialUi.Tab, { value: 'date', icon: dateRangeIcon ? React__default.createElement(
-          materialUi.Icon,
-          { className: dateRangeIcon },
-          dateRangeIcon
-        ) : React__default.createElement(
+      React__default.createElement(materialUi.Tab, { value: 'date', icon: dateRangeIcon ? React__default.createElement(materialUi.Icon, { className: dateRangeIcon }) : React__default.createElement(
           materialUi.Icon,
           null,
           'date_range'
         ) }),
-      React__default.createElement(materialUi.Tab, { value: 'time', icon: timeIcon ? React__default.createElement(
-          materialUi.Icon,
-          { className: timeIcon },
-          timeIcon
-        ) : React__default.createElement(
+      React__default.createElement(materialUi.Tab, { value: 'time', icon: timeIcon ? React__default.createElement(materialUi.Icon, { className: timeIcon }) : React__default.createElement(
           materialUi.Icon,
           null,
           'access_time'

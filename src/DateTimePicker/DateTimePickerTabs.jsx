@@ -45,8 +45,8 @@ export const DateTimePickerTabs = (props) => {
         className={classes.tabs}
         indicatorColor={indicatorColor}
       >
-        <Tab value="date" icon={dateRangeIcon ? <Icon className={dateRangeIcon}>{dateRangeIcon}</Icon> : <Icon>date_range</Icon>} />
-        <Tab value="time" icon={timeIcon ? <Icon className={timeIcon}>{timeIcon}</Icon> : <Icon>access_time</Icon>} />
+        <Tab value="date" icon={dateRangeIcon ? <Icon className={dateRangeIcon} /> : <Icon>date_range</Icon>} />
+        <Tab value="time" icon={timeIcon ? <Icon className={timeIcon} /> : <Icon>access_time</Icon>} />
       </Tabs>
     </Paper>
   );

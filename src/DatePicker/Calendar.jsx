@@ -119,7 +119,7 @@ export class Calendar extends Component {
 
 const styles = theme => ({
   calendar: {
-    marginTop: 10,
+    marginTop: 5,
   },
   hidden: {
     opacity: 0,

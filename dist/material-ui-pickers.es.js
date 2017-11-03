@@ -479,11 +479,7 @@ var CalendarHeader = function CalendarHeader(props) {
       React.createElement(
         IconButton,
         { onClick: selectPreviousMonth },
-        leftArrowIcon ? React.createElement(
-          Icon,
-          { className: leftArrowIcon },
-          leftArrowIcon
-        ) : 'keyboard_arrow_left'
+        leftArrowIcon ? React.createElement(Icon, { className: leftArrowIcon }) : 'keyboard_arrow_left'
       ),
       React.createElement(
         'div',
@@ -493,11 +489,7 @@ var CalendarHeader = function CalendarHeader(props) {
       React.createElement(
         IconButton,
         { onClick: selectNextMonth },
-        rightArrowIcon ? React.createElement(
-          Icon,
-          { className: rightArrowIcon },
-          rightArrowIcon
-        ) : 'keyboard_arrow_right'
+        rightArrowIcon ? React.createElement(Icon, { className: rightArrowIcon }) : 'keyboard_arrow_right'
       )
     ),
     React.createElement(
@@ -686,7 +678,7 @@ Calendar.defaultProps = {
 var styles$2 = function styles(theme) {
   return {
     calendar: {
-      marginTop: 10
+      marginTop: 5
     },
     hidden: {
       opacity: 0,
@@ -1980,20 +1972,12 @@ var DateTimePickerTabs = function DateTimePickerTabs(props) {
         className: classes.tabs,
         indicatorColor: indicatorColor
       },
-      React.createElement(Tab, { value: 'date', icon: dateRangeIcon ? React.createElement(
-          Icon,
-          { className: dateRangeIcon },
-          dateRangeIcon
-        ) : React.createElement(
+      React.createElement(Tab, { value: 'date', icon: dateRangeIcon ? React.createElement(Icon, { className: dateRangeIcon }) : React.createElement(
           Icon,
           null,
           'date_range'
         ) }),
-      React.createElement(Tab, { value: 'time', icon: timeIcon ? React.createElement(
-          Icon,
-          { className: timeIcon },
-          timeIcon
-        ) : React.createElement(
+      React.createElement(Tab, { value: 'time', icon: timeIcon ? React.createElement(Icon, { className: timeIcon }) : React.createElement(
           Icon,
           null,
           'access_time'
