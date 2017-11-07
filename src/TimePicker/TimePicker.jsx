@@ -108,6 +108,7 @@ export class TimePicker extends Component {
             :
               <MinutesView
                 date={date}
+                meridiemMode={meridiemMode}
                 onChange={this.handleChange(false)}
               />
         }

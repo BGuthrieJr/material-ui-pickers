@@ -8,11 +8,16 @@ export default class MinutesView extends Component {
   static propTypes = {
     date: PropTypes.object.isRequired,
     onChange: PropTypes.func.isRequired,
+    meridiemMode: PropTypes.string.isRequired,
   }
 
   handleChange = (minutes, isFinish) => {
+    const { meridiemMode } = this.props;
+
     const updatedDate = this.props.date.clone().minutes(minutes);
-    this.props.onChange(updatedDate, isFinish);
+    const withMeridiem = convertToMeridiem(updatedTime, meridiemMode);
+
+    this.props.onChange(withMeridiem, isFinish);
   }
 
   render() {

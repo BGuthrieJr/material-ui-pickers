@@ -1340,7 +1340,7 @@ var getMinutes = function getMinutes(offsetX, offsetY) {
   return value;
 };
 
-var convertToMeridiem = function convertToMeridiem(time, meridiem) {
+var convertToMeridiem$1 = function convertToMeridiem(time, meridiem) {
   if (time.format('a') !== meridiem) {
     var hours = meridiem === 'am' ? time.hours() - 12 : time.hours() + 12;
 
@@ -1586,7 +1586,7 @@ var HourView = function (_PureComponent) {
 
 
       var updatedTime = _this.props.date.clone().hour(hours);
-      var withMeridiem = convertToMeridiem(updatedTime, meridiemMode);
+      var withMeridiem = convertToMeridiem$1(updatedTime, meridiemMode);
 
       _this.props.onChange(withMeridiem, isFinish);
     }, _temp), possibleConstructorReturn(_this, _ret);
@@ -1647,8 +1647,13 @@ var MinutesView = function (_Component) {
     }
 
     return _ret = (_temp = (_this = possibleConstructorReturn(this, (_ref = MinutesView.__proto__ || Object.getPrototypeOf(MinutesView)).call.apply(_ref, [this].concat(args))), _this), _this.handleChange = function (minutes, isFinish) {
+      var meridiemMode = _this.props.meridiemMode;
+
+
       var updatedDate = _this.props.date.clone().minutes(minutes);
-      _this.props.onChange(updatedDate, isFinish);
+      var withMeridiem = convertToMeridiem(updatedTime, meridiemMode);
+
+      _this.props.onChange(withMeridiem, isFinish);
     }, _temp), possibleConstructorReturn(_this, _ret);
   }
 
@@ -1684,7 +1689,8 @@ var MinutesView = function (_Component) {
 
 MinutesView.propTypes = {
   date: PropTypes.object.isRequired,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  meridiemMode: PropTypes.string.isRequired
 };
 
 var TimePicker = function (_Component) {
@@ -1789,6 +1795,7 @@ var TimePicker = function (_Component) {
           onChange: this.handleChange(true)
         }) : React__default.createElement(MinutesView, {
           date: date,
+          meridiemMode: meridiemMode,
           onChange: this.handleChange(false)
         })
       );
